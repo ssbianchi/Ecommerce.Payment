@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  ecommerce.payment.server:
+    image: ${DOCKER_REGISTRY-}ecommerce.payment.server
+    build:
+      context: .
+      dockerfile: Ecommerce.Payment.API/Dockerfile

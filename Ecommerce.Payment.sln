@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34616.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.Payment.API", "Ecommerce.Payment.API\Ecommerce.Payment.API.csproj", "{931F6F8F-2D73-438C-9DA0-924DFADE74AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.Payment.Application", "Ecommerce.Payment.Application\Ecommerce.Payment.Application.csproj", "{E6827AD5-3713-4DE6-A412-2CC748A608AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.Payment.CrossCutting", "Ecommerce.Payment.CrossCutting\Ecommerce.Payment.CrossCutting.csproj", "{A16CF353-2229-4B9D-8A3A-F59E9E9CABC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.Payment.Domain", "Ecommerce.Payment.Domain\Ecommerce.Payment.Domain.csproj", "{40FD2F56-05A5-4423-85F4-34EA6B8440A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.Payment.Repository", "Ecommerce.Payment.Repository\Ecommerce.Payment.Repository.csproj", "{17B33B48-AF41-4840-8E95-65FD46AE4AD9}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{47F327AB-39C4-4EA3-91A8-15B1B6345997}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{931F6F8F-2D73-438C-9DA0-924DFADE74AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{931F6F8F-2D73-438C-9DA0-924DFADE74AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{931F6F8F-2D73-438C-9DA0-924DFADE74AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{931F6F8F-2D73-438C-9DA0-924DFADE74AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6827AD5-3713-4DE6-A412-2CC748A608AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6827AD5-3713-4DE6-A412-2CC748A608AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6827AD5-3713-4DE6-A412-2CC748A608AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6827AD5-3713-4DE6-A412-2CC748A608AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A16CF353-2229-4B9D-8A3A-F59E9E9CABC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A16CF353-2229-4B9D-8A3A-F59E9E9CABC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A16CF353-2229-4B9D-8A3A-F59E9E9CABC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A16CF353-2229-4B9D-8A3A-F59E9E9CABC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40FD2F56-05A5-4423-85F4-34EA6B8440A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40FD2F56-05A5-4423-85F4-34EA6B8440A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40FD2F56-05A5-4423-85F4-34EA6B8440A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40FD2F56-05A5-4423-85F4-34EA6B8440A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17B33B48-AF41-4840-8E95-65FD46AE4AD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17B33B48-AF41-4840-8E95-65FD46AE4AD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17B33B48-AF41-4840-8E95-65FD46AE4AD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17B33B48-AF41-4840-8E95-65FD46AE4AD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47F327AB-39C4-4EA3-91A8-15B1B6345997}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47F327AB-39C4-4EA3-91A8-15B1B6345997}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47F327AB-39C4-4EA3-91A8-15B1B6345997}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47F327AB-39C4-4EA3-91A8-15B1B6345997}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3295465E-B8F3-4F0A-A141-48AC6E3F3C93}
+	EndGlobalSection
+EndGlobal
