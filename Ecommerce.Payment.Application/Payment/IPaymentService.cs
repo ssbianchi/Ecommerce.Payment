@@ -6,7 +6,7 @@ namespace Ecommerce.Payment.Application.Payment
     {
         Task<PaymentDto> GetPayment(int PaymentId);
         Task<List<PaymentDto>> GetAllPayments();
-        Task<PaymentDto> SavePayment(PaymentDto PaymentDto);
+        Task<PaymentDto> SavePayment(int orderSessionId, double amount);
         Task<bool> DeletePayment(int PaymentdId);
     }
 }

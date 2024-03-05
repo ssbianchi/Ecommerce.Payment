@@ -10,7 +10,7 @@ namespace Ecommerce.Payment.Repository.Mapping.Payment
             builder.ToTable("Payments");
             builder.HasKey(e => e.Id);
             builder.Property(x => x.Id).IsRequired().HasColumnName("Id");
-            builder.Property(x => x.OrderId).IsRequired().HasColumnName("OrderId");
+            builder.Property(x => x.OrderSessionId).IsRequired().HasColumnName("OrderSessionId");
             builder.Property(x => x.StatusId).IsRequired().HasColumnName("StatusId");
             builder.Property(x => x.Amount).IsRequired().HasColumnName("Amount");
             builder.Property(x => x.CreatedAt).IsRequired().HasColumnName("CreatedAt");

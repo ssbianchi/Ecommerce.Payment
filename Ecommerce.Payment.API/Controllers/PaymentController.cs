@@ -39,17 +39,26 @@ namespace Ecommerce.Payment.API.Controllers
 
             return Ok(result);
         }
-
         [HttpPost("SavePayment")]
-        public async Task<IActionResult> SavePayment([FromBody] PaymentDto PaymentDto)
+        public async Task<IActionResult> SavePayment(int orderSessionId, double amount)
         {
-            var result = await _paymentService.SavePayment(PaymentDto);
+            var result = await _paymentService.SavePayment(orderSessionId, amount);
 
             if (result == null)
                 return NotFound();
 
             return Created($"/{result.Id}", result);
         }
+        //[HttpPost("SavePayment")]
+        //public async Task<IActionResult> SavePayment([FromBody] PaymentDto PaymentDto)
+        //{
+        //    var result = await _paymentService.SavePayment(PaymentDto);
+
+        //    if (result == null)
+        //        return NotFound();
+
+        //    return Created($"/{result.Id}", result);
+        //}
         [HttpDelete("DeletePayment")]
         public async Task<IActionResult> DeltePayment(int PaymentId)
         {

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Ecommerce.Payment.Application.Payment.Dto;
 using Ecommerce.Payment.Application.Shared;
+using Ecommerce.Payment.CrossCutting.Enumeration;
 using Ecommerce.Payment.Domain.Entity.Payment.Repository;
 using Ecommerce.Payment.Domain.Entity.Readonly.Repository;
 
@@ -9,19 +10,19 @@ namespace Ecommerce.Payment.Application.Payment
     //public class PaymentService : IPaymentService
     public class PaymentService : AbstractService, IPaymentService
     {
-        private readonly IPaymentRepository _PaymentRepository;
+        private readonly IPaymentRepository _paymentRepository;
         private readonly IReadonlyRepository _readonlyRepository;
 
         public PaymentService(IPaymentRepository PaymentRepository, IMapper mapper, IReadonlyRepository readonlyRepository)
             : base(mapper)
         {
-            _PaymentRepository = PaymentRepository;
+            _paymentRepository = PaymentRepository;
             //_mapper = mapper;
             _readonlyRepository = readonlyRepository;
         }
         public async Task<PaymentDto> GetPayment(int PaymentId)
         {
-            var result = await _PaymentRepository.GetOneByCriteria(a => a.Id == PaymentId);
+            var result = await _paymentRepository.GetOneByCriteria(a => a.Id == PaymentId);
             return _mapper.Map<PaymentDto>(result);
         }
         public async Task<List<PaymentDto>> GetAllPayments()
@@ -48,16 +49,24 @@ namespace Ecommerce.Payment.Application.Payment
         //    }
         //    return _mapper.Map<PaymentDto>(entity);
         //}
-        public async Task<PaymentDto> SavePayment(PaymentDto PaymentDto)
+        public async Task<PaymentDto> SavePayment(int orderSessionId, double amount)
         {
-            using (var transaction = await _PaymentRepository.CreateTransaction())
+            using (var transaction = await _paymentRepository.CreateTransaction())
             {
                 try
                 {
-                    //if (!PaymentDto.Created.HasValue)
-                    //    Created.Created = DateTime.Now;
+                    if (orderSessionId == 0 || amount == 0)
+                        throw new System.Exception("Favor verificar os dados da ordem!");
 
-                    var result = await SaveUpdateDeleteDto(PaymentDto, _PaymentRepository);
+                    var paymentDto = new PaymentDto()
+                    {
+                        OrderSessionId = orderSessionId,
+                        StatusId = (int)PaymentStatusEnum.Completed,
+                        Amount = amount,
+                        CreatedAt = DateTime.UtcNow,
+                    };
+
+                    var result = await SaveUpdateDeleteDto(paymentDto, _paymentRepository);
 
                     await transaction.CommitAsync();
 
@@ -72,13 +81,13 @@ namespace Ecommerce.Payment.Application.Payment
         }
         public async Task<bool> DeletePayment(int PaymentdId)
         {
-            using (var transaction = await _PaymentRepository.CreateTransaction())
+            using (var transaction = await _paymentRepository.CreateTransaction())
             {
                 try
                 {
-                    var Payment = await _PaymentRepository.GetOneByCriteria(a => a.Id == PaymentdId);
+                    var Payment = await _paymentRepository.GetOneByCriteria(a => a.Id == PaymentdId);
 
-                    await _PaymentRepository.Delete(Payment);
+                    await _paymentRepository.Delete(Payment);
 
                     await transaction.CommitAsync();
                     return true;

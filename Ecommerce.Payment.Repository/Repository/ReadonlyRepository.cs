@@ -18,10 +18,10 @@ namespace Ecommerce.Payment.Repository.Repository
         {
             var sql = @"
 Select Id
-     , Nome
-     , Login
-     , Password
-     , Email
+     , OrderSessionId
+     , StatusId
+     , Amount
+     , CreatedAt
   From Payments";
 
             //var result = await QueryAsync<DapperPayment>(sql, new { Id = PaymentId });
