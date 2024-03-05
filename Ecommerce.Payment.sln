@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Payment.Repositor
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{47F327AB-39C4-4EA3-91A8-15B1B6345997}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.Payment.Rabbit.Consumer", "..\Ecommerce.Payment.Rabbit.Consumer\Ecommerce.Payment.Rabbit.Consumer.csproj", "{5211215B-AE2C-43B5-8860-59B568F22D49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Payment.Rabbit.Consumer", "Ecommerce.Payment.Rabbit.Consumer\Ecommerce.Payment.Rabbit.Consumer.csproj", "{E858ACB5-5618-476D-8F2C-2355F263AC2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +47,10 @@ Global
 		{47F327AB-39C4-4EA3-91A8-15B1B6345997}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47F327AB-39C4-4EA3-91A8-15B1B6345997}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47F327AB-39C4-4EA3-91A8-15B1B6345997}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5211215B-AE2C-43B5-8860-59B568F22D49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5211215B-AE2C-43B5-8860-59B568F22D49}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5211215B-AE2C-43B5-8860-59B568F22D49}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5211215B-AE2C-43B5-8860-59B568F22D49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E858ACB5-5618-476D-8F2C-2355F263AC2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E858ACB5-5618-476D-8F2C-2355F263AC2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E858ACB5-5618-476D-8F2C-2355F263AC2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E858ACB5-5618-476D-8F2C-2355F263AC2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
