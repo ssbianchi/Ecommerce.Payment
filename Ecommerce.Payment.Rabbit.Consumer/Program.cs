@@ -39,7 +39,7 @@ namespace Ecommerce.Payment.Rabbit.Consumer
                     if (json == "true")
                         return;
 
-                    RabbitMenssage message = JsonSerializer.Deserialize<RabbitMenssage>(json);
+                    RabbitMessage message = JsonSerializer.Deserialize<RabbitMessage>(json);
 
                     System.Threading.Thread.Sleep(1000);
 

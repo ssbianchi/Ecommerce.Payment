@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Ecommerce.Payment.Application.Payment.Dto;
+using Ecommerce.Payment.Application.RabbitRequest;
 using Ecommerce.Payment.Application.Shared;
 using Ecommerce.Payment.CrossCutting.Enumeration;
 using Ecommerce.Payment.Domain.Entity.Payment.Repository;
@@ -69,6 +70,13 @@ namespace Ecommerce.Payment.Application.Payment
                     var result = await SaveUpdateDeleteDto(paymentDto, _paymentRepository);
 
                     await transaction.CommitAsync();
+
+                    var rabbit = new RabbitRequestService();
+                    rabbit.SendMessage(new PaymentCloseDto()
+                    {
+                        OrderSessionId = orderSessionId,
+                        OrderSessionStatusId = 1
+                    });
 
                     return result;
                 }

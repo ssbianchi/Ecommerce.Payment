@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Options;
-using RestSharp;
-using System.Runtime.InteropServices;
+﻿using RestSharp;
 using System.Text.Json;
 
 namespace Ecommerce.Payment.Rabbit.Consumer.WebApi

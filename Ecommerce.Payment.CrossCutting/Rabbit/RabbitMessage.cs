@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ecommerce.Payment.CrossCutting.Rabbit
 {
-    public class RabbitMenssage
+    public class RabbitMessage
     {
         public int OrderSessionId { get; set; }
         public double Amount { get; set; }
